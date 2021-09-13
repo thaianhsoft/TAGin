@@ -70,6 +70,6 @@ func (r *router) handle(c *UserContext) {
 		r.handlers[method+"-"+pattern](c)
 		log.Println(params)
 	} else {
-		http.Error(*c.Writer, "404 not found", 404)
+		http.Error(c.Writer, "404 not found", 404)
 	}
 }
